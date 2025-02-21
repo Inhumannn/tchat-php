@@ -14,7 +14,7 @@ if(!empty($_POST["message"]) && !empty($_POST["pseudo"])){
     $tchat = $db->prepare($requete);
 
     // Execution de la requête
-    // Imagnons que les données viennent d'un formulaire en méthode post
+    // Imagnons qu  e les données viennent d'un formulaire en méthode post
     $tchat->execute(array(
         'pseudo' => $_POST['pseudo'],
         'msg' => $_POST['message']
@@ -30,7 +30,7 @@ if(!empty($_POST["message"]) && !empty($_POST["pseudo"])){
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -47,5 +47,8 @@ if(!empty($_POST["message"]) && !empty($_POST["pseudo"])){
         <input type="submit" value="Envoyer le message">
     </form>
     <?=$message?>
+
+    <h1>Les message : </h1>
+    <?php include_once('read.php'); ?>
 </body>
 </html>
